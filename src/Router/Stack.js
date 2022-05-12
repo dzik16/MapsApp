@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
   LoginScreen,
   RegisterScreen,
@@ -13,21 +14,26 @@ import {
   SuksesScreen
 } from '../Screens/index';
 
+import Icon from 'react-native-vector-icons/Feather';
+
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 function Router() {
   return (
     <Stack.Navigator initialRouteName="LoginScreen">
       <Stack.Screen
-        name="HomeScreen"
-        component={HomeScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
         name="LoginScreen"
         component={LoginScreen}
         options={{ headerShown: false }}
       />
+
+      <Stack.Screen
+        name="MainApp"
+        component={MainApp}
+        options={{ headerShown: false }}
+      />
+
       <Stack.Screen
         name="RegisterScreen"
         component={RegisterScreen}
@@ -54,11 +60,6 @@ function Router() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="QrCodeScreen"
-        component={QrCodeScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
         name="SuksesScreen"
         component={SuksesScreen}
         options={{ headerShown: false }}
@@ -66,5 +67,39 @@ function Router() {
     </Stack.Navigator>
   );
 }
+
+function MainApp() {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        tabBarActiveTintColor: '#0D28A6',
+      }}>
+      <Tab.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: 'Home',
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="home" color={color} size={size} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="QrCodeScreen"
+        component={QrCodeScreen}
+        options={{
+          tabBarLabel: 'QrCodeScreen',
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="list" color={color} size={size} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
+
 
 export default Router;
