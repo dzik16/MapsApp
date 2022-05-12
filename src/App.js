@@ -3,11 +3,11 @@ import {StyleSheet, View} from 'react-native';
 import React, {useEffect} from 'react';
 import messaging from '@react-native-firebase/messaging';
 
-import CrashlyticsScreen from './Screens/CrashlyticsScreen';
+import CrashlyticsScreen from './Screens/CrashlyticsScreen/index.js';
 import AnalyticsScreen from './Screens/AnalyticsScreen';
 import MapsScreen from './Screens/MapsScreen';
-import QrCodeScreen from './Screens/QrCodeScreen';
-import BiometricScreen from './Screens/BiometricScreen';
+import QrCodeScreen from './Screens/QrCodeScreen/index.js';
+import BiometricScreen from './Screens/BiometricScreen/index.js';
 import LoginScreen from './Screens/LoginScreen';
 import RegisterScreen from './Screens/RegisterScreen';
 

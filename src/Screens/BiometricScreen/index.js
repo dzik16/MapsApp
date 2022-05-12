@@ -22,7 +22,7 @@ const BiometricScreen = () => {
     TouchID.authenticate('Touch The Fingerprint Sensor', optionalConfigObject)
       .then(success => {
         // navigation.replace('MainApp');
-        alert('Authentication Sukses');
+        console.log('Authentication Sukses');
       })
       .catch(error => {
         alert('Authentication Failed');

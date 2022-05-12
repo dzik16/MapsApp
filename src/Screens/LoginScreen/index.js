@@ -6,7 +6,7 @@ import {
   GoogleSigninButton,
 } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
-import BiometricScreen from './BiometricScreen';
+import BiometricScreen from '../BiometricScreen/index.js';
 
 const LoginScreen = () => {
   const [email, setEmail] = React.useState('');
@@ -64,6 +64,19 @@ const LoginScreen = () => {
     return await auth().signOut();
   }
 
+  const signOut = async () => {
+    try {
+      await GoogleSignin.revokeAccess();
+      await GoogleSignin.signOut();
+      auth()
+        .signOut()
+        .then(() => alert('Your are signed out!'));
+      setUser(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   if (!user) {
     return (
       <View>
@@ -106,7 +119,7 @@ const LoginScreen = () => {
         title="Sign-Out"
         onPress={() =>
           onGoogleSignOut().then(() => {
-            auth().onAuthStateChanged(onAuthStateChanged(null));
+            signOut();
             console.log('Signed Out');
           })
         }
