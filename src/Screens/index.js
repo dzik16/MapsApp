@@ -6,6 +6,7 @@ import LoginScreen from './LoginScreen';
 import MapsScreen from './MapsScreen';
 import QrCodeScreen from './QrCodeScreen';
 import RegisterScreen from './RegisterScreen';
+import SuksesScreen from '../Components/SuksesScreen';
 
 export {
   LoginScreen,
@@ -16,4 +17,5 @@ export {
   HomeScreen,
   MapsScreen,
   QrCodeScreen,
+  SuksesScreen
 };

@@ -42,7 +42,7 @@ const LoginScreen = () => {
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         alert('User account signed in!');
-        navigation.navigate('HomeScreen');
+        navigation.replace('HomeScreen');
       })
       .catch(error => {
         if (error.code === 'auth/invalid-email') {
@@ -146,7 +146,7 @@ const LoginScreen = () => {
             color={GoogleSigninButton.Color.Dark}
             onPress={() =>
               onGoogleButtonPress().then(() => {
-                navigation.navigate('HomeScreen');
+                navigation.replace('HomeScreen');
                 console.log('Signed in with Google!')
               }
               )
@@ -158,7 +158,7 @@ const LoginScreen = () => {
   }
 
   return (
-    <View>{navigation.navigate('HomeScreen')}</View>
+    <View>{navigation.replace('HomeScreen')}</View>
   )
 };
 
