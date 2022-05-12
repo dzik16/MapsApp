@@ -8,6 +8,8 @@ import AnalyticsScreen from './Screens/AnalyticsScreen';
 import MapsScreen from './Screens/MapsScreen';
 import QrCodeScreen from './Screens/QrCodeScreen';
 import BiometricScreen from './Screens/BiometricScreen';
+import LoginScreen from './Screens/LoginScreen';
+import RegisterScreen from './Screens/RegisterScreen';
 
 const App = () => {
   async function requestUserPermission() {
@@ -37,7 +39,9 @@ const App = () => {
       <AnalyticsScreen /> */}
       {/* <MapsScreen /> */}
       {/* <QrCodeScreen /> */}
-      <BiometricScreen />
+      {/* <BiometricScreen /> */}
+      <LoginScreen />
+      {/* <RegisterScreen /> */}
     </View>
   );
 };
