@@ -3,7 +3,7 @@
 /* eslint-disable no-use-before-define */
 import {StyleSheet, View, TextInput, Image} from 'react-native';
 import React from 'react';
-import {Color} from '../config/utils/color';
+import {Color} from '../utils/color';
 
 function FormInput({
   icon,

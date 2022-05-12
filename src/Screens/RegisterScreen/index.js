@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import {StyleSheet, Text, View, Button, TextInput} from 'react-native';
 import React from 'react';
 import auth from '@react-native-firebase/auth';
