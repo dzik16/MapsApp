@@ -1,9 +1,10 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
+import messaging from '@react-native-firebase/messaging';
 
 import CrashlyticsScreen from './Screens/CrashlyticsScreen';
 import AnalyticsScreen from './Screens/AnalyticsScreen';
-import messaging from '@react-native-firebase/messaging';
+import MapsScreen from './Screens/MapsScreen';
 
 const App = () => {
   async function requestUserPermission() {
@@ -29,13 +30,21 @@ const App = () => {
   }, []);
 
   return (
-    <View>
+    <View style={styles.container}>
       <CrashlyticsScreen />
       <AnalyticsScreen />
+      <MapsScreen />
     </View>
   );
 };
 
 export default App;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    ...StyleSheet.absoluteFillObject,
+    flex: 1, //the container will fill the whole screen.
+    // justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+});

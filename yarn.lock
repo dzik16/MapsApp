@@ -1293,12 +1293,12 @@
 
 "@react-native-firebase/analytics@^14.9.3":
   version "14.9.3"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-14.9.3.tgz#f558325dfd0529666cdc03b89507998248dee14f"
+  resolved "https://registry.npmjs.org/@react-native-firebase/analytics/-/analytics-14.9.3.tgz"
   integrity sha512-KAL2ss7TF6eWV/wTfQNeuAr3AVNpUmuYNqC+PwDRtAJUcfiwwCc+gcsXp8UzA7ELC+JWLO4kDc+1LkdFr7p81g==
 
 "@react-native-firebase/app@^14.9.3":
   version "14.9.3"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-14.9.3.tgz#112e63ad25b6bdfaca9dfdf1ebc89292a067a569"
+  resolved "https://registry.npmjs.org/@react-native-firebase/app/-/app-14.9.3.tgz"
   integrity sha512-ipCVqj3MmK2O7se78ykjgPZdb4bBjME0Qqc07L/cKZTI6P9pNWRwYmT1R6kFF7aPirjcBxSIoJneotdRqIzaSQ==
   dependencies:
     "@expo/config-plugins" "^4.1.4"
@@ -1307,7 +1307,7 @@
 
 "@react-native-firebase/crashlytics@^14.9.3":
   version "14.9.3"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-14.9.3.tgz#44987580a85d1a5f57e4c25100dbe3a1cd471c5d"
+  resolved "https://registry.npmjs.org/@react-native-firebase/crashlytics/-/crashlytics-14.9.3.tgz"
   integrity sha512-+0HDSxSAS5RcTjT7t9xYrdsGnRieP90MKeMtdb/4ejx8c5JgoGTb8/BR1QIwHyMbEq6UsJxZtjLEcnMuDgAKtA==
   dependencies:
     "@expo/config-plugins" "^4.1.4"
@@ -1315,7 +1315,7 @@
 
 "@react-native-firebase/messaging@^14.9.3":
   version "14.9.3"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/messaging/-/messaging-14.9.3.tgz#dfc29bc8bb2bac89131050a2d810f224553631db"
+  resolved "https://registry.npmjs.org/@react-native-firebase/messaging/-/messaging-14.9.3.tgz"
   integrity sha512-6xdlgndSEqbQSSJSc4NlV7KDiUQpHVl2IkhxG6itaL0ZKL+esBGBoae7MNKEb3R9ru8DXQTdNtJ9lr6XTG1YkA==
 
 "@react-native/assets@1.0.0":
@@ -1406,6 +1406,11 @@
   version "1.0.0"
   resolved "https://registry.npmjs.org/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz"
   integrity sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag==
+
+"@types/geojson@^7946.0.7":
+  version "7946.0.8"
+  resolved "https://registry.npmjs.org/@types/geojson/-/geojson-7946.0.8.tgz"
+  integrity sha512-1rkryxURpr6aWP7R786/UQOkJ3PcpQiWkAXBmdWc7ryFWqN6a4xfK7BtjXvFBKO9LjQ+MWQSWxYeZX1OApnArA==
 
 "@types/graceful-fs@^4.1.2":
   version "4.1.5"
@@ -4611,7 +4616,7 @@ lodash.truncate@^4.4.2:
   resolved "https://registry.npmjs.org/lodash.truncate/-/lodash.truncate-4.4.2.tgz"
   integrity sha1-WjUNoLERO4N+z//VgSy+WNbq4ZM=
 
-lodash@^4.17.10, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.7.0:
+lodash@^4.14.2, lodash@^4.17.10, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.7.0:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -5657,6 +5662,13 @@ react-is@^16.13.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-native-camera-kit@^12.1.0:
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-camera-kit/-/react-native-camera-kit-12.1.0.tgz#71149bb11be393ee4af8c6a600c4c4fdf33f83a1"
+  integrity sha512-iysY3YN8i1BWE7qRiLVgjanrGPtVUsczYDY89yqHbZHKWt2iZ5AiVyijTkHTmKXiK+GpclTvYnA415RgO06C3g==
+  dependencies:
+    lodash "^4.14.2"
+
 react-native-codegen@^0.0.13:
   version "0.0.13"
   resolved "https://registry.npmjs.org/react-native-codegen/-/react-native-codegen-0.0.13.tgz"
@@ -5667,10 +5679,23 @@ react-native-codegen@^0.0.13:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
+react-native-geolocation-service@^5.3.0-beta.4:
+  version "5.3.0-beta.4"
+  resolved "https://registry.npmjs.org/react-native-geolocation-service/-/react-native-geolocation-service-5.3.0-beta.4.tgz"
+  integrity sha512-8Z/FP1ls02fnvqXCII+dDS329lP3UigNR4eIHUjPQdHu/DRGMRCpJJuj05hcq37UJL/zVVsXnPFdLA9lCOWYCQ==
+
 react-native-gradle-plugin@^0.0.6:
   version "0.0.6"
   resolved "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.0.6.tgz"
   integrity sha512-eIlgtsmDp1jLC24dRn43hB3kEcZVqx6DUQbR0N1ABXGnMEafm9I3V3dUUeD1vh+Dy5WqijSoEwLNUPLgu5zDMg==
+
+react-native-maps@^0.31.1:
+  version "0.31.1"
+  resolved "https://registry.npmjs.org/react-native-maps/-/react-native-maps-0.31.1.tgz"
+  integrity sha512-vipeOPykqLRMCLcLUCZEB+cTdNSlq88NLb0jChY4UGTY5fgOS7GYWkfswy6bW1ayTRLxJS3zpMGFDUY59/ZrXA==
+  dependencies:
+    "@types/geojson" "^7946.0.7"
+    deprecated-react-native-prop-types "^2.3.0"
 
 react-native@0.68.1:
   version "0.68.1"
@@ -6301,7 +6326,7 @@ source-map-url@^0.4.0:
 
 source-map@0.5.6:
   version "0.5.6"
-  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
+  resolved "https://registry.npmjs.org/source-map/-/source-map-0.5.6.tgz"
   integrity sha1-dc449SvwczxafwwRjYEzSiu19BI=
 
 source-map@^0.5.6:
@@ -6359,7 +6384,7 @@ sprintf-js@~1.0.2:
 
 stack-generator@^2.0.5:
   version "2.0.5"
-  resolved "https://registry.yarnpkg.com/stack-generator/-/stack-generator-2.0.5.tgz#fb00e5b4ee97de603e0773ea78ce944d81596c36"
+  resolved "https://registry.npmjs.org/stack-generator/-/stack-generator-2.0.5.tgz"
   integrity sha512-/t1ebrbHkrLrDuNMdeAcsvynWgoH/i4o8EGGfX7dEYDoTXOYVAkEpFdtshlvabzc6JlJ8Kf9YdFEoz7JkzGN9Q==
   dependencies:
     stackframe "^1.1.1"
@@ -6378,7 +6403,7 @@ stackframe@^1.1.1:
 
 stacktrace-gps@^3.0.4:
   version "3.0.4"
-  resolved "https://registry.yarnpkg.com/stacktrace-gps/-/stacktrace-gps-3.0.4.tgz#7688dc2fc09ffb3a13165ebe0dbcaf41bcf0c69a"
+  resolved "https://registry.npmjs.org/stacktrace-gps/-/stacktrace-gps-3.0.4.tgz"
   integrity sha512-qIr8x41yZVSldqdqe6jciXEaSCKw1U8XTXpjDuy0ki/apyTn/r3w9hDAAQOhZdxvsC93H+WwwEu5cq5VemzYeg==
   dependencies:
     source-map "0.5.6"
@@ -6386,7 +6411,7 @@ stacktrace-gps@^3.0.4:
 
 stacktrace-js@^2.0.0:
   version "2.0.2"
-  resolved "https://registry.yarnpkg.com/stacktrace-js/-/stacktrace-js-2.0.2.tgz#4ca93ea9f494752d55709a081d400fdaebee897b"
+  resolved "https://registry.npmjs.org/stacktrace-js/-/stacktrace-js-2.0.2.tgz"
   integrity sha512-Je5vBeY4S1r/RnLydLl0TBTi3F2qdfWmYsGvtfZgEI+SCprPppaIhQf5nGcal4gI4cGpCV/duLcAzT1np6sQqg==
   dependencies:
     error-stack-parser "^2.0.6"
