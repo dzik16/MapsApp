@@ -1,4 +1,4 @@
-/* eslint-disable no-alert */
+/* eslint-disable no-unused-vars */
 import {StyleSheet, View} from 'react-native';
 import React, {useEffect} from 'react';
 import messaging from '@react-native-firebase/messaging';
@@ -7,6 +7,7 @@ import CrashlyticsScreen from './Screens/CrashlyticsScreen';
 import AnalyticsScreen from './Screens/AnalyticsScreen';
 import MapsScreen from './Screens/MapsScreen';
 import QrCodeScreen from './Screens/QrCodeScreen';
+import BiometricScreen from './Screens/BiometricScreen';
 
 const App = () => {
   async function requestUserPermission() {
@@ -22,7 +23,6 @@ const App = () => {
 
   const getToken = async () => {
     const token = await messaging().getToken();
-    alert(JSON.stringify(token));
     console.log(JSON.stringify(token));
   };
 
@@ -35,8 +35,9 @@ const App = () => {
     <View style={styles.container}>
       {/* <CrashlyticsScreen />
       <AnalyticsScreen /> */}
-      <MapsScreen />
+      {/* <MapsScreen /> */}
       {/* <QrCodeScreen /> */}
+      <BiometricScreen />
     </View>
   );
 };
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
     flex: 1, //the container will fill the whole screen.
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+    // justifyContent: 'flex-end',
+    // alignItems: 'center',
   },
 });

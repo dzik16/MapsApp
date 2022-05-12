@@ -1,5 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-alert */
+import React, {useEffect} from 'react';
+import {StyleSheet} from 'react-native';
 import {CameraScreen} from 'react-native-camera-kit';
 
 export default function QrCodeScreen() {
