@@ -20,6 +20,7 @@ export default function MapsScreen() {
     getLocation();
   });
 
+
   const getLocation = async () => {
     const hasPermission = await hasLocationPermission();
 

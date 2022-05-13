@@ -1,11 +1,15 @@
 /* eslint-disable no-alert */
-import {View} from 'react-native';
-import React, {useEffect} from 'react';
+import { View } from 'react-native';
+import React, { useEffect } from 'react';
 import TouchID from 'react-native-touch-id';
-// import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
+import auth from '@react-native-firebase/auth';
+import {
+  GoogleSignin,
+} from '@react-native-google-signin/google-signin';
 
 const BiometricScreen = () => {
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
 
   function onFingerPrintPress() {
     const optionalConfigObject = {
@@ -25,15 +29,39 @@ const BiometricScreen = () => {
         console.log('Authentication Sukses');
       })
       .catch(error => {
+        onGoogleSignOut().then(() => {
+          signOut();
+          console.log('Signed Out');
+          navigation.replace('LoginScreen');
+        })
         alert('Authentication Failed');
       });
   }
+
+  async function onGoogleSignOut() {
+    return await auth().signOut();
+  }
+
+  const signOut = async () => {
+    try {
+      await GoogleSignin.revokeAccess();
+      await GoogleSignin.signOut();
+      auth()
+        .signOut()
+        .then(() => {
+          alert('Your are signed out!')
+        });
+      // setUser(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
     onFingerPrintPress();
   });
 
-  return <View>{}</View>;
+  return <View>{ }</View>;
 };
 
 export default BiometricScreen;
