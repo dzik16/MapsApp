@@ -1,12 +1,12 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable react/jsx-filename-extension */
-import {StyleSheet, View, Image} from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
 import React from 'react';
-import {LoginImage} from '../../../Assets';
+import { RegisterImage } from '../../../../Assets/index';
 
 const header = () => (
   <View style={styles.container}>
-    <Image style={styles.img} source={LoginImage} />
+    <Image style={styles.img} source={RegisterImage} />
   </View>
 );
 
@@ -14,13 +14,14 @@ export default header;
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: '10%',
+    paddingTop: '15%',
     justifyContent: 'center',
     alignItems: 'center',
     paddingLeft: 20,
+    marginBottom: '15%',
   },
   img: {
-    width: 280,
-    height: 300,
+    width: 290,
+    height: 260,
   },
 });

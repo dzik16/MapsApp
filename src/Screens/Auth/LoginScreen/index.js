@@ -13,14 +13,14 @@ import {
   GoogleSigninButton,
 } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
-import ScreenStatusBar from '../../Components/ScreenStatusBar';
+import ScreenStatusBar from '../../../Components/ScreenStatusBar';
 import { useIsFocused, useNavigation } from '@react-navigation/native';
-import { IconEmail, IconPassword } from '../../Assets';
-import { Color } from '../../utils/color';
+import { IconEmail, IconPassword } from '../../../Assets';
+import { Color } from '../../../utils/color';
 
 import Header from './components/header';
 import Title from './components/title';
-import FormInput from '../../Components/FormInput';
+import FormInput from '../../../Components/FormInput';
 
 const LoginScreen = () => {
   const navigation = useNavigation();

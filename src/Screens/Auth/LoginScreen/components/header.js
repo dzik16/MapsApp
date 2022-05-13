@@ -2,11 +2,11 @@
 /* eslint-disable react/jsx-filename-extension */
 import { StyleSheet, View, Image } from 'react-native';
 import React from 'react';
-import { RegisterImage } from '../../../Assets/index';
+import { LoginImage } from '../../../../Assets';
 
 const header = () => (
   <View style={styles.container}>
-    <Image style={styles.img} source={RegisterImage} />
+    <Image style={styles.img} source={LoginImage} />
   </View>
 );
 
@@ -14,14 +14,13 @@ export default header;
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: '15%',
+    paddingTop: '10%',
     justifyContent: 'center',
     alignItems: 'center',
     paddingLeft: 20,
-    marginBottom: '15%',
   },
   img: {
-    width: 290,
-    height: 260,
+    width: 280,
+    height: 300,
   },
 });

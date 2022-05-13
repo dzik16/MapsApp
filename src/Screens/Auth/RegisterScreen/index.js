@@ -8,12 +8,12 @@ import {
 import React from 'react';
 import auth from '@react-native-firebase/auth';
 import { useNavigation, useIsFocused } from '@react-navigation/native';
-import { IconEmail, IconName, IconPassword } from '../../Assets/index';
-import { Color } from '../../utils/color';
+import { IconEmail, IconName, IconPassword } from '../../../Assets/index';
+import { Color } from '../../../utils/color';
 
 import Header from './components/header';
-import FormInput from '../../Components/FormInput';
-import ScreenStatusBar from '../../Components/ScreenStatusBar';
+import FormInput from '../../../Components/FormInput';
+import ScreenStatusBar from '../../../Components/ScreenStatusBar';
 
 const RegisterScreen = () => {
   const navigation = useNavigation();

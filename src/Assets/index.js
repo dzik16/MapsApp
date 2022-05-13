@@ -1,7 +1,5 @@
 import SplashAnim from './animations/splash-screen.json';
 import SuccessAnim from './animations/success.json';
-import LoadingAnim from './animations/loading.json';
-import InternetAnim from './animations/no-internet.json';
 
 import LoginImage from './images/login.png';
 import RegisterImage from './images/register.png';
@@ -21,8 +19,6 @@ import IconBack from './icons/back.png';
 export {
   SplashAnim,
   SuccessAnim,
-  LoadingAnim,
-  InternetAnim,
   LoginImage,
   RegisterImage,
   SuccessImage,

@@ -11,17 +11,25 @@ import {
   HomeScreen,
   MapsScreen,
   QrCodeScreen,
-  SuksesScreen
+  SuksesScreen,
+  WebScreen,
+  Splash
 } from '../Screens/index';
 
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function Router() {
   return (
-    <Stack.Navigator initialRouteName="LoginScreen">
+    <Stack.Navigator initialRouteName="Splash">
+      <Stack.Screen
+        name="Splash"
+        component={Splash}
+        options={{ headerShown: false }}
+      />
+
       <Stack.Screen
         name="LoginScreen"
         component={LoginScreen}
@@ -64,6 +72,11 @@ function Router() {
         component={SuksesScreen}
         options={{ headerShown: false }}
       />
+      <Stack.Screen
+        name="WebScreen"
+        component={WebScreen}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
 }
@@ -93,7 +106,7 @@ function MainApp() {
           tabBarLabel: 'QR Code',
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <Icon name="list" color={color} size={size} />
+            <Icon name="qr-code-scanner" color={color} size={size} />
           ),
         }}
       />

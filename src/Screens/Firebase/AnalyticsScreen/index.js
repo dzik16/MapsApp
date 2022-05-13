@@ -3,6 +3,7 @@ import { View, TouchableOpacity } from 'react-native';
 import analytics from '@react-native-firebase/analytics';
 
 export default function AnalyticsScreen() {
+  const navigation = useNavigation();
   return (
     <View>
       <TouchableOpacity

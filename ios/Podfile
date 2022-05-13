@@ -21,6 +21,8 @@ target 'MapsApp' do
 
   pod 'TouchID', :path => '../node_modules/react-native-touch-id'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'MapsAppTests' do
     inherit! :complete
     # Pods for testing

@@ -63,11 +63,11 @@ import auth from '@react-native-firebase/auth';
 import {
   GoogleSignin,
 } from '@react-native-google-signin/google-signin';
-import { useIsFocused, useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { LogoutImage, CrashlyticImage, AnalyticsImage, MapsImage } from '../../Assets/index.js';
 import analytics from '@react-native-firebase/analytics';
 
-import BiometricScreen from '../BiometricScreen/index.js';
+import BiometricScreen from '../Firebase/BiometricScreen';
 
 
 const HomeScreen = () => {
@@ -93,20 +93,8 @@ const HomeScreen = () => {
   };
   return (
     <View style={styles.container}>
-      {/* <Text>index</Text>
       <BiometricScreen />
-      <Button
-        title="Sign-Out"
-        onPress={() =>
-          onGoogleSignOut().then(() => {
-            signOut();
-            console.log('Signed Out');
-            navigation.navigate('LoginScreen');
-          })
-        }
-      /> */}
       <Text style={styles.judul}>Welcome To Maps App</Text>
-
       <View style={[styles.gridContainer]}>
         <TouchableOpacity style={[styles.grid, styles.analytic]}
           onPress={async () =>
