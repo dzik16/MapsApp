@@ -90,7 +90,7 @@ function MainApp() {
         name="QrCodeScreen"
         component={QrCodeScreen}
         options={{
-          tabBarLabel: 'QrCodeScreen',
+          tabBarLabel: 'QR Code',
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Icon name="list" color={color} size={size} />

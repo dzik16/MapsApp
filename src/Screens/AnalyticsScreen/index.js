@@ -1,12 +1,11 @@
 import React from 'react';
-import {View, Button} from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import analytics from '@react-native-firebase/analytics';
 
 export default function AnalyticsScreen() {
   return (
     <View>
-      <Button
-        title="Add To Basket"
+      <TouchableOpacity
         onPress={async () =>
           await analytics().logEvent('basket', {
             id: 3745092,
@@ -15,7 +14,7 @@ export default function AnalyticsScreen() {
             size: 'L',
           })
         }
-      />
+      >{alert('Tap Analytics Button')}</TouchableOpacity>
     </View>
   );
 }

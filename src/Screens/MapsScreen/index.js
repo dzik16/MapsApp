@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Alert,
   PermissionsAndroid,
@@ -8,8 +8,9 @@ import {
   ToastAndroid,
   View,
   Text,
+  Image
 } from 'react-native';
-import MapView, {Marker, Callout} from 'react-native-maps';
+import MapView, { Marker, Callout } from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
 
 export default function MapsScreen() {
@@ -81,6 +82,7 @@ export default function MapsScreen() {
 
   return (
     <View style={styles.container}>
+      <Image />
       <MapView
         style={styles.map}
         initialRegion={{
