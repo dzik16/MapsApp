@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, Alert } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import auth from '@react-native-firebase/auth';
 import {
   GoogleSignin,
@@ -7,11 +7,33 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import { LogoutImage, CrashlyticImage, AnalyticsImage, MapsImage } from '../../Assets/index.js';
 import analytics from '@react-native-firebase/analytics';
+import messaging from '@react-native-firebase/messaging';
 
 import BiometricScreen from '../Firebase/BiometricScreen';
 
 
 const HomeScreen = () => {
+  async function requestUserPermission() {
+    const authStatus = await messaging().requestPermission();
+    const enabled =
+      authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
+      authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+
+    if (enabled) {
+      console.log('Authorization status:', authStatus);
+    }
+  }
+
+  const getToken = async () => {
+    const token = await messaging().getToken()
+    console.log(JSON.stringify(token))
+  }
+
+  useEffect(() => {
+    requestUserPermission()
+    getToken()
+  }, [])
+
   const navigation = useNavigation();
 
   async function onGoogleSignOut() {
@@ -100,11 +122,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
     backgroundColor: "#79B4B7"
   },
   judul: {
-    fontSize: 30,
+    fontSize: 25,
     alignSelf: "center",
     color: 'white',
     fontWeight: "bold",
@@ -113,15 +135,14 @@ const styles = StyleSheet.create({
   gridContainer: {
     flexDirection: 'row',
     justifyContent: "space-between",
-    marginTop: 35
+    marginTop: 20
   },
   grid: {
     backgroundColor: 'cyan',
     width: 160,
     height: 200,
-    marginHorizontal: 10,
     paddingHorizontal: 10,
-    paddingVertical: 13,
+    paddingVertical: 5,
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: { width: 2, height: 2 },
@@ -133,6 +154,7 @@ const styles = StyleSheet.create({
     width: 130,
     height: 130,
     alignSelf: "center",
+    marginTop: 10,
   },
   txt: {
     alignSelf: "center",

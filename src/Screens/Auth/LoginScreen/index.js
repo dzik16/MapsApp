@@ -30,10 +30,10 @@ const LoginScreen = () => {
 
   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
-  const [user, setUser] = useState();
+  const [infoUser, setInfoUser] = useState();
 
-  function onAuthStateChanged(user) {
-    setUser(user);
+  function onAuthStateChanged(infoUser) {
+    setInfoUser(infoUser);
     if (initializing) setInitializing(false);
   }
 
@@ -90,7 +90,7 @@ const LoginScreen = () => {
     return auth().signInWithCredential(googleCredential);
   }
 
-  if (!user) {
+  if (!infoUser) {
     return (
       <SafeAreaView style={styles.container}>
         <ScreenStatusBar status={focus} color={Color.SECOND_MAIN_COLOR} />
