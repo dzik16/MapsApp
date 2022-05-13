@@ -7,15 +7,19 @@ export default function AnalyticsScreen() {
   return (
     <View>
       <TouchableOpacity
-        onPress={async () =>
-          await analytics().logEvent('basket', {
-            id: 3745092,
-            item: 'mens grey t-shirt',
-            description: ['round neck', 'long sleeved'],
-            size: 'L',
-          })
+        onPress={
+          async () => {
+            Alert.alert('Success', 'Invalid Form!');
+            async () =>
+              await analytics().logEvent('basket', {
+                id: 3745092,
+                item: 'mens grey t-shirt',
+                description: ['round neck', 'long sleeved'],
+                size: 'L',
+              })
+          }
         }
-      >{alert('Tap Analytics Button')}</TouchableOpacity>
-    </View>
+      ></TouchableOpacity>
+    </View >
   );
 }

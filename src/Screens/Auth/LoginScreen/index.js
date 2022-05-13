@@ -41,12 +41,12 @@ const LoginScreen = () => {
     auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        alert('User account signed in!');
+        console.log("Login Success");
         navigation.replace('MainApp');
       })
       .catch(error => {
         if (error.code === 'auth/invalid-email') {
-          alert('That email address is invalid!');
+          alert('email address is invalid!');
         }
         console.error(error);
       });
@@ -57,7 +57,7 @@ const LoginScreen = () => {
     const emailStatus = emailRegEx.test(email); // Boolean
 
     if (email.length === 0 && password.length === 0) {
-      alert('Empty form, Please fill form correctly!');
+      alert('From cant be empty!');
     } else if (emailStatus && password.length >= 8) {
       console.log('Success');
       sendData();

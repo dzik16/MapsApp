@@ -1,63 +1,4 @@
-// /* eslint-disable no-unused-vars */
-// import {StyleSheet, View} from 'react-native';
-// import React, {useEffect} from 'react';
-// import messaging from '@react-native-firebase/messaging';
-
-// import CrashlyticsScreen from './Screens/CrashlyticsScreen/index.js';
-// import AnalyticsScreen from './Screens/AnalyticsScreen';
-// import MapsScreen from './Screens/MapsScreen';
-// import QrCodeScreen from './Screens/QrCodeScreen/index.js';
-// import BiometricScreen from './Screens/BiometricScreen/index.js';
-// import LoginScreen from './Screens/LoginScreen';
-// import RegisterScreen from './Screens/RegisterScreen';
-
-// const HomeScreen = () => {
-//   async function requestUserPermission() {
-//     const authStatus = await messaging().requestPermission();
-//     const enabled =
-//       authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
-//       authStatus === messaging.AuthorizationStatus.PROVISIONAL;
-
-//     if (enabled) {
-//       console.log('Authorization status:', authStatus);
-//     }
-//   }
-
-//   const getToken = async () => {
-//     const token = await messaging().getToken();
-//     console.log(JSON.stringify(token));
-//   };
-
-//   useEffect(() => {
-//     requestUserPermission();
-//     getToken();
-//   }, []);
-
-//   return (
-//     <View style={styles.container}>
-//       {/* <CrashlyticsScreen />
-//       <AnalyticsScreen /> */}
-//       {/* <MapsScreen /> */}
-//       {/* <QrCodeScreen /> */}
-//       {/* <BiometricScreen /> */}
-//       {/* <LoginScreen /> */}
-//       {/* <RegisterScreen /> */}
-//     </View>
-//   );
-// };
-
-// export default HomeScreen;
-
-// const styles = StyleSheet.create({
-//   // container: {
-//   //   // ...StyleSheet.absoluteFillObject,
-//   //   flex: 1, //the container will fill the whole screen.
-//   //   // justifyContent: 'flex-end',
-//   //   // alignItems: 'center',
-//   // },
-// });
-
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, Alert } from 'react-native'
 import React from 'react'
 import auth from '@react-native-firebase/auth';
 import {
@@ -97,13 +38,16 @@ const HomeScreen = () => {
       <Text style={styles.judul}>Welcome To Maps App</Text>
       <View style={[styles.gridContainer]}>
         <TouchableOpacity style={[styles.grid, styles.analytic]}
-          onPress={async () =>
-            await analytics().logEvent('basket', {
-              id: 3745092,
-              item: 'mens grey t-shirt',
-              description: ['round neck', 'long sleeved'],
-              size: 'L',
-            })
+          onPress={() => {
+            Alert.alert('Success', 'Tap Alatytics Firebase');
+            async () =>
+              await analytics().logEvent('basket', {
+                id: 3745092,
+                item: 'mens grey t-shirt',
+                description: ['round neck', 'long sleeved'],
+                size: 'L',
+              })
+          }
           }>
           <Image
             style={styles.img}

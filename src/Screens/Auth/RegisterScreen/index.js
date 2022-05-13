@@ -30,7 +30,6 @@ const RegisterScreen = () => {
       Alert.alert('Error', 'Empty form, Please fill form correctly!');
     } else if (emailStatus && password.length >= 8) {
       sendData()
-      navigation.replace('SuksesScreen')
     } else {
       Alert.alert('Error', 'Invalid Form!');
     }
@@ -41,14 +40,15 @@ const RegisterScreen = () => {
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
         console.log('User account created & signed in!');
+        navigation.replace('SuksesScreen')
       })
       .catch(error => {
         if (error.code === 'auth/email-already-in-use') {
-          alert('That email address is already in use!');
+          alert('email address is already in use!');
         }
 
         if (error.code === 'auth/invalid-email') {
-          alert('That email address is invalid!');
+          alert('email address is invalid!');
         }
 
         console.error(error);
